@@ -1,2 +1,2 @@
 # odin-project
-Files created following along theodinproject.com
+Files created following along <a href=https://www.theodinproject.com> theodinproject.com</a>
