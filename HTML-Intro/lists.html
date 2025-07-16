@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Intro | Lists</title>
+
+    <link rel="stylesheet" href="theme.css">
+    <style>
+    
+
+    body {
+        font-family: var(--regular-font);
+        font-weight: 400;
+        background-color: rgba(var(--background));
+    }
+
+    h1, h2, h3, h4, h5 {
+        text-align: center;
+        font-family: var(--header-font);
+        font-weight: 700;
+    }
+
+    html {font-size: 100%;} /* 16px */
+
+    h1 {font-size: 5.053rem; /* 48.8px */}
+
+    h2 {font-size: 2.442rem; /* 39.04px */}
+
+    h3 {font-size: 1.954rem; /* 31.2px */}
+
+    h4 {font-size: 1.563rem; /* 24.96px */}
+
+    h5 {font-size: 1.250rem; /* 20px */}
+
+    small {font-size: 0.800rem; /* 12.8px */}
+
+    .flex {
+        display: flex;
+        flex-direction: row;
+        /* outline: 2px solid red; */
+        margin: 0 100px;
+        column-gap: 20px;
+    }
+
+    .flex > div {
+        
+        flex: 1;
+        
+        color: rgb(var(--text));
+        list-style-position: inside;
+        line-height: 3rem;
+        /* outline: solid 2px green; */
+        background-color: var(--background-lighter);
+        border-radius: 10px;
+        
+    }
+
+    ol {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    ul {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+
+    li::marker {
+        color: rgb(var(--accent));
+    }
+
+    .headerDiv {
+        color: rgb(var(--text));
+        margin: 50px 100px 50px 100px;
+        
+    }
+
+    ul > h5 {
+        font-size: 2rem;
+    }
+
+    ol > h5 {
+        font-size: 2rem;
+    }
+
+    div.ordered {
+        background-color: rgb(var(--primary));
+        color: rgb(var(--background));
+    }
+
+    </style>
+</head>
+<body>
+    <div class="headerDiv">
+        <h1>My Lists</h1>
+    </div>
+    <div class="flex">
+        <!-- An unordered shopping list of your favorite foods -->
+        <div>
+            <ul>
+                <h5>Shopping List For Dinner</h5>
+                <li>Rice</li>
+                <li>Spicy Chili Crisp</li>
+                <li>Tide Pods</li>
+                <li>Silica Gel</li>
+                <li>Crayons</li>
+                <li>Dirt</li>
+                <li>Rat Poison</li>
+                <li>Plutonium</li>
+            </ul>
+        </div>
+        <!-- An ordered list of todo’s you need to get done today -->
+        <div class="ordered">
+            
+            <ol>
+                <h5>To-Do's</h5>
+                <li>Do Dishes</li>
+                <li>Clean bathroom</li>
+                <li>Re-enact Breaking Bad</li>
+                <li>Assassinate the President</li>
+                <li>World Domination</li>
+                <li>World Peace</li>
+                <li>Abolish Said World Peace</li>
+                <li>Sleep and repeat</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="flex" style="padding-top: 20px; padding-bottom: 100px">
+        <!-- An ordered list of your all time top 5 favorite video games or movies -->
+        <div class="ordered">
+            <ol>
+                <h5>Top 5 Games</h5>
+                <li>Stardew Valley</li>
+                <li>Terraria</li>
+                <li>Portal 2</li>
+                <li>No Man's Sky</li>
+                <li>Risk of Rain 2</li>
+            </ol>
+        </div>
+
+        <!-- An unordered list of places you’d like to visit someday -->
+        <div>
+            <ul>
+                <h5>Places to Visit</h5>
+                <li>China</li>
+                <li>Japan</li>
+                <li>Microcenter</li>
+                <li>Ohio</li>
+                <li>Area 51</li>
+                <li>Bermuda Triangle</li>
+                <li>Pentagon</li>
+                <li>North Korea</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="theme.css">
+    <title>HTML Intro</title>
+
+    <style>
+        body {
+            background-color: rgb(var(--background));
+        }
+        .typingText h1 {
+            margin: 0 auto;
+            color: rgb(var(--text));
+            font-family: var(--regular-font);
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            animation: 
+                typing 1s steps(16, end) 0.5s 1,
+                moveup 0.5s ease 2s;
+            animation-fill-mode: forwards;
+            padding-top: 80px;
+
+
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            } 
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes moveup {
+            from {
+                padding-top: 80px;
+            }
+            to {
+                padding-top: 0;
+            }
+        }
+
+        .flex {
+            display: flex;
+            height: 98vh;
+            flex-direction: column;
+            align-items: center;
+            /* outline: 2px solid red; */
+            justify-content: center;
+            gap: 40px;
+            
+        }
+
+        .buttonDiv {
+            animation: popout 0.8s ease 1 3s;
+            animation-fill-mode: forwards;
+
+
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            transform: scale(0);
+
+        }
+
+        @keyframes popout {
+            from {
+                transform: scale(0);
+            }
+            60% {
+                transform: scale(1.1);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        button {
+            border: none;
+            outline: 2px solid rgb(var(--primary));
+            border-radius: 2px;
+            background-color: rgba(0,0,0,0);
+            color: rgba(var(--text));
+            font-family: var(--regular-font);
+            padding: 10px 40px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(var(--accent), 0.2);
+        }
+
+        button:active {
+            background-color: rgba(var(--accent), 0.4);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <div class="typingText">
+            <h1>Hello World :D</h1>
+        </div>
+       
+        <div class="buttonDiv">
+            <a href="blog.html"><button>Blog</button></a>
+            <a href="lists.html"><button>Lists</button></a>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

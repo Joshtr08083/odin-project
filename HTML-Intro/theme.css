@@ -1,0 +1,24 @@
+/* 
+Credit for color theming (and fonts): realtimecolors
+https://www.realtimecolors.com/?colors=f7ebea-1b1b1b-c1b3b2-7d3a34-829b83&fonts=Black%20Han%20Sans-Julius%20Sans%20One
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Julius+Sans+One&display=swap');
+
+:root {
+    --text: 247, 235, 234;
+    --background: 27, 27, 27;
+    --primary: 193, 179, 178;
+    --secondary: 125, 58, 52;
+    --accent: 130, 155, 131;
+    
+    
+
+
+    --background-lighter: #242322;
+
+    --header-font: 'Black Han Sans';
+    --regular-font: 'Julius Sans One'
+    
+
+}
