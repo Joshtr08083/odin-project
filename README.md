@@ -7,4 +7,4 @@ Files created following along <a href=https://www.theodinproject.com> theodinpro
 <br>
 <br>
 <br>
-<i>...not much to say</i>
+<i>...not much else to say</i>
