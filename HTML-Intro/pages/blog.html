@@ -1,3 +1,5 @@
+<!-- Created for "Working with Text" section -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,18 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Intro | Blog</title>
     
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <script src="../scripts/transition.js" defer></script>
+
     <style>
-        body {
-            background-color: rgb(var(--background));
-        }
 
         h1 {
-            font-family: rgb(var(--header-font));
             text-align: center; 
             font-size: 3em; 
             margin: 10px; 
-            color: rgb(var(--text));
         }
 
         h2 {
@@ -30,15 +29,22 @@
             margin: 10px 25%;
             line-height: 1.5em;
         }
+        
         a:link{
             color: rgb(var(--secondary));
         }
         a:visited {
             color: rgb(var(--accent));
         }
+
+        
+
     </style>
 </head>
 <body>
+    <div id="transition"></div>
+
+    <a> <button class="backButton" onclick="transition('../index.html')">Back</button></a>
     <div style="padding-top: 50px"></div>
 
     <!-- Title -->
@@ -67,7 +73,7 @@
         faucibus tellus, sed sodales nulla mattis quis. <strong>Nam eget tortor iaculis, faucibus sapien ut, laoreet ante.</strong> Aliquam sollicitudin lacinia odio, non semper enim dapibus vel. 
         Praesent <a target="_blank" rel="noopener noreferrer" href="http://en.lmgtfy2.com/?q=What+is+a+rick+roll">tristique fringilla</a> tortor sollicitudin pharetra. In elementum sapien in turpis tincidunt, quis hendrerit urna porta. 
     </p>
-    <div style="padding-top:150px"></div>
+    <div style="padding-top:250px"></div>
 
     <!-- Copyright thing (not actually real probably idk) -->
     <p style="margin: 0; text-align: center; font-size: 0.7em; color: rgb(161, 161, 161)">© 45 BC Cicero. No rights reserved.</p>

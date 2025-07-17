@@ -1,68 +1,92 @@
+<!-- Created for "Lists" section -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="la">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Intro | Lists</title>
 
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <script src="../scripts/transition.js" defer></script>
+
     <style>
     
+    * {
+        box-sizing: border-box;
+    }
 
     body {
-        font-family: var(--regular-font);
-        font-weight: 400;
         background-color: rgba(var(--background));
     }
 
-    h1, h2, h3, h4, h5 {
+    h1, h5 {
         text-align: center;
-        font-family: var(--header-font);
-        font-weight: 700;
+        justify-self: center;
+
     }
 
-    html {font-size: 100%;} /* 16px */
-
-    h1 {font-size: 5.053rem; /* 48.8px */}
-
-    h2 {font-size: 2.442rem; /* 39.04px */}
-
-    h3 {font-size: 1.954rem; /* 31.2px */}
-
-    h4 {font-size: 1.563rem; /* 24.96px */}
-
-    h5 {font-size: 1.250rem; /* 20px */}
-
-    small {font-size: 0.800rem; /* 12.8px */}
+    h1 {font-size: 3.053rem; /* 48.8px */}
 
     .flex {
         display: flex;
         flex-direction: row;
         /* outline: 2px solid red; */
-        margin: 0 100px;
+        margin: 0 20%;
         column-gap: 20px;
+        row-gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .flex > div {
+
+        flex: 40%;
         
-        flex: 1;
-        
-        color: rgb(var(--text));
         list-style-position: inside;
-        line-height: 3rem;
+        
         /* outline: solid 2px green; */
         background-color: var(--background-lighter);
         border-radius: 10px;
-        
+        box-shadow: none;
+        transition: transform 0.15s, box-shadow 0.2s;
     }
 
-    ol {
-        font-size: 1.5rem;
-        text-align: center;
+    .flex > div:hover {
+        box-shadow: 0 0  8px rgb(var(--accent));
+        transform: translateY(-2%);
     }
-    ul {
-        font-size: 1.5rem;
+
+
+
+    @media (max-width: 1500px) {
+        .flex > div {
+            flex: 100%;
+        }
+        .flex {
+            margin: 0 10%;
+        }
+
+    }
+
+
+    div.ordered {
+        background-color: rgb(var(--primary));
+        color: rgb(var(--background));
+    }
+
+    div.ordered h5{
+        color: rgb(var(--background));
+    }   
+
+    div.ordered li::marker{
+        color: rgb(var(--secondary));
+    }   
+
+    ol, ul{
+        font-size: 1rem;
         text-align: center;
+        line-height: 2rem;
     }
 
 
@@ -76,36 +100,34 @@
         
     }
 
-    ul > h5 {
-        font-size: 2rem;
+    ul > h5, ol > h5 {
+        font-size: 1.5rem;
     }
 
-    ol > h5 {
-        font-size: 2rem;
-    }
 
-    div.ordered {
-        background-color: rgb(var(--primary));
-        color: rgb(var(--background));
-    }
+
 
     </style>
 </head>
 <body>
+    <div id="transition"></div>
+
+    <a> <button class="backButton" onclick="transition('../index.html')">Back</button></a>
+
     <div class="headerDiv">
-        <h1>My Lists</h1>
+        <h1>Tabulae</h1>
     </div>
+    
     <div class="flex">
         <!-- An unordered shopping list of your favorite foods -->
         <div>
             <ul>
-                <h5>Shopping List For Dinner</h5>
-                <li>Rice</li>
-                <li>Spicy Chili Crisp</li>
+                <h5>Dinner Shopping List</h5>
                 <li>Tide Pods</li>
+                <li>Petroleum</li>
                 <li>Silica Gel</li>
                 <li>Crayons</li>
-                <li>Dirt</li>
+                <li>Cocaine</li>
                 <li>Rat Poison</li>
                 <li>Plutonium</li>
             </ul>
@@ -115,19 +137,16 @@
             
             <ol>
                 <h5>To-Do's</h5>
-                <li>Do Dishes</li>
-                <li>Clean bathroom</li>
-                <li>Re-enact Breaking Bad</li>
+                <li>Find the cure for cancer</li>
+                <li>Lose said cure for cancer</li>
                 <li>Assassinate the President</li>
                 <li>World Domination</li>
-                <li>World Peace</li>
-                <li>Abolish Said World Peace</li>
-                <li>Sleep and repeat</li>
+                <li>Bring World Peace</li>
+                <li>Remove World Peace</li>
+                <li>Sleep soundly</li>
             </ol>
         </div>
-    </div>
 
-    <div class="flex" style="padding-top: 20px; padding-bottom: 100px">
         <!-- An ordered list of your all time top 5 favorite video games or movies -->
         <div class="ordered">
             <ol>
@@ -144,17 +163,18 @@
         <div>
             <ul>
                 <h5>Places to Visit</h5>
-                <li>China</li>
-                <li>Japan</li>
+                <li>Yellow people place</li>
+                <li>Yellow people place 2</li>
                 <li>Microcenter</li>
                 <li>Ohio</li>
                 <li>Area 51</li>
                 <li>Bermuda Triangle</li>
-                <li>Pentagon</li>
+                <li>Pentagon (illegally)</li>
                 <li>North Korea</li>
             </ul>
         </div>
 
     </div>
+    <div style="padding-bottom: 20px;"></div>
 </body>
 </html>

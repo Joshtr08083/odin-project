@@ -1,31 +1,39 @@
+<!-- Created for "HTML Boilerplate" section -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="./css/theme.css">
+    <script src="./scripts/transition.js" defer></script>
+
     <title>HTML Intro</title>
 
     <style>
         body {
             background-color: rgb(var(--background));
         }
-        .typingText h1 {
-            margin: 0 auto;
-            color: rgb(var(--text));
+
+        #typingText {
+
             font-family: var(--regular-font);
+            margin: 0 auto;
             overflow: hidden;
             white-space: nowrap;
-            width: 0;
-            animation: 
-                typing 1s steps(16, end) 0.5s 1,
-                moveup 0.5s ease 2s;
-            animation-fill-mode: forwards;
-            padding-top: 80px;
-
 
         }
+
+        .textAnimation {
+            padding-top: 80px;
+            width: 0;
+            animation: 
+                typing 1s steps(16, end) 0.5s 1 normal forwards,
+                moveup 0.5s ease 2s 1 normal forwards;
+        }
+
+
 
         @keyframes typing {
             from {
@@ -56,65 +64,70 @@
             
         }
 
-        .buttonDiv {
-            animation: popout 0.8s ease 1 3s;
-            animation-fill-mode: forwards;
-
-
+        #buttonDiv {
+            position: absolute;
             margin: 0 auto;
-
             display: flex;
             flex-direction: row;
             gap: 20px;
-            transform: scale(0);
-
+            overflow: hidden;
+            
         }
 
-        @keyframes popout {
-            from {
-                transform: scale(0);
-            }
-            60% {
-                transform: scale(1.1);
-            }
+        .buttonAnimation {
+            top: 64%;
+            padding: 0px 2px 0px 2px;
+            height: 0px;
+            animation: dropdown 0.5s ease 2s 1 normal forwards;
+        }
+
+        .buttonNoAnimate {
+            top: 54%;
+            padding: 2px 2px 40px 2px;
+        }
+
+
+        @keyframes dropdown {
             to {
-                transform: scale(1);
+                top: 54%;
+                padding: 2px 2px 40px 2px;
             }
         }
 
-        button {
-            border: none;
-            outline: 2px solid rgb(var(--primary));
-            border-radius: 2px;
-            background-color: rgba(0,0,0,0);
-            color: rgba(var(--text));
-            font-family: var(--regular-font);
+
+        .homeButton {
             padding: 10px 40px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: rgba(var(--accent), 0.2);
-        }
-
-        button:active {
-            background-color: rgba(var(--accent), 0.4);
         }
 
     </style>
 </head>
 <body>
+    <!-- Creates a fun, albeit mildly annoying and gets old quick, transition between pages -->
+    <div id="transition"></div>
+    
     <div class="flex">
-        <div class="typingText">
-            <h1>Hello World :D</h1>
+        <div>
+            <h1 id = "typingText">Hello World :D</h1>
         </div>
        
-        <div class="buttonDiv">
-            <a href="blog.html"><button>Blog</button></a>
-            <a href="lists.html"><button>Lists</button></a>
+        <div id="buttonDiv">
+            <a><button class="homeButton" onclick="transition('./pages/blog.html')">Blog</button></a>
+            <a><button class="homeButton" onclick="transition('./pages/lists.html')">Lists</button></a>
+            <a><button class="homeButton" onclick="transition('./pages/about.html')">About</button></a>
         </div>
     </div>
     
+    <!-- Prevents forcing animation every single time, because it gets old fast -->
+     <script>
+        if (sessionStorage.getItem("seenAnimation")) {
+            document.getElementById("buttonDiv").classList.add("buttonNoAnimate");
+        } 
+        else {
+            sessionStorage.setItem("seenAnimation", true);
+            document.getElementById("typingText").classList.add("textAnimation");
+            document.getElementById("buttonDiv").classList.add("buttonAnimation");
+        }
+     </script>
     
 </body>
 </html>

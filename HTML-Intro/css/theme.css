@@ -1,0 +1,98 @@
+/* 
+Credit for color theming (and fonts): realtimecolors
+https://www.realtimecolors.com/?colors=f7ebea-1b1b1b-c1b3b2-7d3a34-829b83&fonts=Black%20Han%20Sans-Julius%20Sans%20One
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Julius+Sans+One&display=swap');
+
+:root {
+    --text: 247, 235, 234;
+    --background: 27, 27, 27;
+    --primary: 193, 179, 178;
+    --secondary: 125, 58, 52;
+    --accent: 130, 155, 131;
+    
+    
+
+
+    --background-lighter: #242322;
+
+    --header-font: 'Black Han Sans';
+    --regular-font: 'Julius Sans One';
+    
+    box-sizing: border-box; 
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--header-font);
+    color: rgb(var(--text));
+    font-weight: 700;
+}
+body {
+    background-color: rgb(var(--background));
+    font-family: var(--regular-font);
+    font-weight: 400;
+    color: rgb(var(--text));
+}
+
+button {
+    border: none;
+    outline: 2px solid rgb(var(--primary));
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(var(--text));
+    cursor: pointer;
+    font-family: var(--regular-font);
+    color: rgb(var(--text));
+
+}
+
+button:hover {
+    background-color: rgba(var(--accent), 0.2);
+}
+
+button:active {
+    background-color: rgba(var(--accent), 0.4);
+}
+
+button:focus {
+    outline: 2px solid rgb(var(--accent));
+}
+
+.backButton {
+    position: absolute;
+    padding: 8px 24px;
+    top: 15px;
+    left: 15px;
+    font-size: 0.7rem;
+}
+
+#transition {
+    position: fixed;
+    background-color: var(--background-lighter);
+    width: 150vw;
+    height: 100vw;
+
+    top: 105%;
+    left: 0;
+    transform-origin: 0 0;
+
+    margin: -8px;
+
+    z-index: 10;
+    
+}
+
+.transitionStart {
+    animation: transform 0.5s ease 0s 1 normal forwards;
+}
+
+.transitionEnd {
+    animation: transform 0.5s ease 0s 1 reverse forwards;
+}
+
+@keyframes transform {
+    to {
+        transform: rotate(-90deg);
+    }
+}
