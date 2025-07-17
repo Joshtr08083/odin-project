@@ -8,20 +8,201 @@
     <script src="../scripts/transition.js" defer></script>
 
     <style>
-        h1 {
-            text-align: center;
+        *{
+            margin: 0;
+            padding: 0;
         }
-        p {
-            text-align: center;
+        h1 { text-align: center; }
+
+        p { text-align: center; }
+
+
+        #aboutTitle {
+            margin: 40px 0px;
+            font-size: 2.5rem;
         }
+
+        /* Dog image css */
+        #imageDiv {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            
+            width: 30vw;
+            height: 30vw;
+
+            z-index: -1;
+            overflow: hidden;
+            border-radius: 100%;
+            box-shadow: 0 0 16px rgb(0, 0, 0, 0.5);
+
+            
+        }
+        .imageDivAnimate {
+            right: 60vw;
+            animation: flyIn 1.5s ease 0.2s 1 normal forwards;
+        }
+        .imageDivNoAnimate {
+            right: 10vw;
+        }
+        @keyframes flyIn {
+            to {
+                right: 10vw;
+            }
+        }
+        #imageDiv > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        /* Dog bio css */
+        #divShadedBox {
+            position: absolute;
+            background-color: rgb(var(--background-lighter));
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 20px;
+            left: 10vw;
+
+            z-index: -2;
+
+        }
+        .divShadedBoxAnimate {
+            width: 0;
+            height: 1vh;
+            overflow: hidden;
+
+            animation: 
+                divExpandVertical 1s ease 1.7s 1 normal forwards,
+                divExpandHorizontal 1s ease 0.2s 1 normal forwards;
+        }
+        .divShadedBoxNoAnimate {
+            width: 45vw;
+            height: 0;
+            padding-top: 35vh;
+            padding-bottom: 35vh;
+            overflow: scroll;
+
+        }
+        @keyframes divExpandVertical {
+            to {
+                height: 0;
+                padding-top: 35vh;
+                padding-bottom: 35vh;
+                overflow: scroll;
+
+            }
+        }
+        @keyframes divExpandHorizontal {
+            to {
+                width: 45vw;
+            }
+        }
+
+
+        /* Dog bio text css*/
+        .flexbox {
+            position: absolute;
+
+
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            
+            transform: translateY(-50%);
+
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .flexbox > h1 {
+            margin: 40px;
+            padding-bottom: 10px;
+        }
+        .flexbox > p {
+            line-height: 2rem;
+            margin: 0 10%;
+        }
+        .flexbox > p.quote {
+            color: rgb(187, 187, 187);
+        }
+
+
+
+        @media (max-width: 850px) {
+            #imageDiv {
+                height: 70vh;
+                border-radius: 20px;
+            }
+        }
+        @media (max-width: 550px) {
+            #imageDiv {
+                height: 40vh;
+                left: 50%;
+                width: 40vh;
+                transform: translateX(-50%);
+                top: 15vh;
+                border-radius: 20px;
+            }
+
+            #divShadedBox {
+                top: 60vh;
+                width: 40vh;
+                padding: 40vh 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+
+
     </style>
 </head>
 <body>
     <div id="transition"></div>
 
+    <h1 id="aboutTitle">ABOUT ME</h1>
+
     <a> <button class="backButton" onclick="transition('../index.html')">Back</button></a>
 
-    <h1>ABOUT ME</h1>
-    <p>a</p>
+    <div id="imageDiv">
+        <img src="../images/dog.jpg">
+    </div>
+
+    <div id="divShadedBox">
+        <div class="flexbox">
+            <h1>I AM DOG</h1>
+            <p class="quote">
+                <em>"Woof Woof." - Woof</em>
+            </p>
+            <p>
+                Woof! Woof Woof Woof. Woof Woof... Woof Woof Woof Woof: , <strong>"Bark"</strong>, woof woof, <em> growl growl growl growl. </em> Woof Woof, woof woof woof woof woof, woof. Woof woof, woof woof woof woof woof. woof, woof woof. woof? woof! woof wooof. wo-of, woof woof, "woof woof woof woof woof. woof", woof woof woof. woof "growl", woof, woof... woof woof, woof woof woof!
+            </p>
+
+            <p>Woof woof 👍: <a href="https://www.territoriodezaguates.com/" target="_blank" rel="noopener noreferrer">woof</a></p>
+            <p>Growl growl 👎: <a href="https://www.peta.org/" target="_blank" rel="noopener noreferrer">growl</a></p>
+            <div style="padding-bottom: 10px;"></div>
+        </div>
+
+    </div>
+
+    <!-- controls enable/disable animation logic -->
+    <script>
+        // Disables animation if window is too small
+        const maxWindowWidth = 550;
+
+        if (sessionStorage.getItem("seenAboutAnimation") || window.innerWidth < maxWindowWidth) {
+            document.getElementById("imageDiv").classList.add("imageDivNoAnimate");
+            document.getElementById("divShadedBox").classList.add("divShadedBoxNoAnimate");
+        } 
+        else {
+            sessionStorage.setItem("seenAboutAnimation", true);
+            document.getElementById("imageDiv").classList.add("imageDivAnimate");
+            document.getElementById("divShadedBox").classList.add("divShadedBoxAnimate");
+        }
+    </script>
 </body>
 </html>

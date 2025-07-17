@@ -15,7 +15,7 @@ https://www.realtimecolors.com/?colors=f7ebea-1b1b1b-c1b3b2-7d3a34-829b83&fonts=
     
 
 
-    --background-lighter: #242322;
+    --background-lighter: 36 35 34;
 
     --header-font: 'Black Han Sans';
     --regular-font: 'Julius Sans One';
@@ -33,6 +33,12 @@ body {
     font-family: var(--regular-font);
     font-weight: 400;
     color: rgb(var(--text));
+}
+a:link{
+    color: rgb(var(--secondary));
+}
+a:visited {
+    color: rgb(var(--accent));
 }
 
 button {
@@ -68,10 +74,11 @@ button:focus {
 }
 
 #transition {
+    visibility: hidden;
     position: fixed;
-    background-color: var(--background-lighter);
-    width: 150vw;
-    height: 100vw;
+    background-color: rgb(var(--background-lighter));
+    width: 500%;
+    height: 500%;
 
     top: 105%;
     left: 0;
@@ -83,16 +90,24 @@ button:focus {
     
 }
 
+
+
 .transitionStart {
+
     animation: transform 0.5s ease 0s 1 normal forwards;
 }
 
 .transitionEnd {
+
     animation: transform 0.5s ease 0s 1 reverse forwards;
 }
 
 @keyframes transform {
+    from {
+        visibility: visible;
+    }
     to {
+        visibility: visible;
         transform: rotate(-90deg);
     }
 }
