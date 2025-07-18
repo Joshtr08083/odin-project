@@ -73,7 +73,8 @@ button:focus {
     font-size: 0.7rem;
 }
 
-#transition {
+#transitionStart {
+    visibility: hidden;
     position: fixed;
     background-color: rgb(var(--background-lighter));
     width: 500%;
@@ -88,22 +89,48 @@ button:focus {
     z-index: 10;
     
 }
-.transitionStart {
 
-    animation: transform 0.5s ease 0s 1 normal forwards;
+#transitionEnd {
+    
+    position: fixed;
+    background-color: rgb(var(--background-lighter));
+    transform: rotate(-90deg);
+    width: 500%;
+    height: 500%;
+
+    top: 105%;
+    left: 0;
+    transform-origin: 0 0;
+
+    margin: -8px;
+
+    z-index: 10;
+}
+.transitionStartAnimate {
+
+    animation: transitionStart 0.5s ease 0s 1 normal forwards;
 }
 
-.transitionEnd {
+.transitionEndAnimate {
 
-    animation: transform 0.5s ease 0s 1 reverse forwards;
+    animation: transitionEnd 0.5s ease 0s 1 normal forwards;
+}
+.transitionHide {
+    visibility: hidden;
 }
 
-@keyframes transform {
+@keyframes transitionStart {
     from {
         visibility: visible;
     }
     to {
         visibility: visible;
         transform: rotate(-90deg);
+    }
+}
+
+@keyframes transitionEnd {
+    to {
+        transform: rotate(0deg);
     }
 }

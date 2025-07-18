@@ -6,26 +6,22 @@ try {
 } catch {}
 
 const transitionDelay = 500;
-const transitionElement = document.getElementById("transition");
+const transitionStart = document.getElementById("transitionStart");
+const transitionEnd = document.getElementById("transitionEnd");
 
-if (transitionData && transitionData.bool) {
-    // skip transition if origin is same, this is to prevent it running every reload
-    if (transitionData.origin !== window.location.href) {
-        document.referrer = "";
-        transitionElement.classList.add("transitionEnd");
-    
-        setTimeout(() => {
-            transitionElement.classList.remove("transitionEnd")
-        }, transitionDelay);
-    }
-    
+// only applies if transition has been called and page has not been reloaded
+if (transitionData && transitionData.bool && transitionData.origin !== window.location.href) {
+    // document.referrer = "";
+    transitionEnd.classList.add("transitionEndAnimate");
     sessionStorage.removeItem("transition");
 
+} else {
+    transitionEnd.classList.add("transitionHide");
 }
 
 
 function transition(target) {
-    transitionElement.classList.add("transitionStart");
+    transitionStart.classList.add("transitionStartAnimate");
     sessionStorage.setItem("transition", "{\"bool\":true, \"origin\":\"" + window.location.href + "\"}");
     
     setTimeout(() => {
