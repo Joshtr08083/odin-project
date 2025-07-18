@@ -74,7 +74,6 @@ button:focus {
 }
 
 #transition {
-    visibility: hidden;
     position: fixed;
     background-color: rgb(var(--background-lighter));
     width: 500%;
@@ -89,9 +88,6 @@ button:focus {
     z-index: 10;
     
 }
-
-
-
 .transitionStart {
 
     animation: transform 0.5s ease 0s 1 normal forwards;

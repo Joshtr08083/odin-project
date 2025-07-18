@@ -8,23 +8,20 @@ try {
 const transitionDelay = 500;
 const transitionElement = document.getElementById("transition");
 
-document.addEventListener("DOMContentLoaded", () => {
-    if (transitionData && transitionData.bool) {
-        // skip transition if origin is same, this is to prevent it running every reload
-        if (transitionData.origin !== window.location.href) {
-            document.referrer = "";
-            transitionElement.classList.add("transitionEnd");
-        
-            setTimeout(() => {
-                transitionElement.classList.remove("transitionEnd")
-            }, transitionDelay);
-        }
-        
-        sessionStorage.removeItem("transition");
+if (transitionData && transitionData.bool) {
+    // skip transition if origin is same, this is to prevent it running every reload
+    if (transitionData.origin !== window.location.href) {
+        document.referrer = "";
+        transitionElement.classList.add("transitionEnd");
     
+        setTimeout(() => {
+            transitionElement.classList.remove("transitionEnd")
+        }, transitionDelay);
     }
-});
+    
+    sessionStorage.removeItem("transition");
 
+}
 
 
 function transition(target) {
