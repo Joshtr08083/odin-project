@@ -4,7 +4,8 @@ Files created following along <a href=https://www.theodinproject.com> theodinpro
 ## Pages
 I created pages following each lesson's instructions + the final projects:
 <ul>
-  <a target="_blank" rel="noopener noreferrer" href="https://joshtr08083.github.io/odin-project/HTML-Intro/"><li>HTML Foundations</li></a>
+  <li><a href="https://joshtr08083.github.io/odin-project/HTML-Intro/">HTML Foundations</a> | <a href="https://joshtr08083.github.io/odin-recipes/index.html"> Recipe Project </a></li>
+  
 </ul>
 
 <br>
